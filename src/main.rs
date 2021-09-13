@@ -1,6 +1,6 @@
-use std::env;
-
+use dotenv::dotenv;
 use serenity::{async_trait, model::gateway::Ready, prelude::*};
+use std::env;
 
 struct Handler;
 
@@ -13,6 +13,8 @@ impl EventHandler for Handler {
 
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
+
     let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
 
     let application_id: u64 = env::var("APPLICATION_ID")
