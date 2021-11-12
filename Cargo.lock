@@ -771,6 +771,7 @@ name = "sbot-3"
 version = "0.1.0"
 dependencies = [
  "dotenv",
+ "serde",
  "serenity",
  "tokio",
 ]
